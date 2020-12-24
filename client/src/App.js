@@ -8,8 +8,6 @@ import Posts from './components/Posts/Posts'
 import Form from './components/Form/Form'
 import useStyles from './styles';
 
-
-
 const App = () => {
     const [currentId, setCurrentId] = useState(null);
     const classes = useStyles();
@@ -17,7 +15,7 @@ const App = () => {
 
     useEffect(() => {
         dispatch(getPosts());
-    }, [dispatch]);
+    }, [currentId, dispatch]);
 
     return (
         <Container maxWidth="lg">
