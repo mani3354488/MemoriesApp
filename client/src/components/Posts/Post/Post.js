@@ -30,10 +30,10 @@ const Post = ({ post, setCurrentId }) => {
             </div>
             <Typography className={classes.title} gutterBottom variant="h5" component="h2" >{post.title}</Typography>
             <CardContent>
-                <Typography variant="h5" gutterBottom >{post.message}</Typography>
+                <Typography variant="body" color="textSecondary" component="p" gutterBottom >{post.message}</Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))>
+                <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))}>
                     <ThumbUpAltIcon fontsize="small" />
                     Like
                     {post.likeCount}
