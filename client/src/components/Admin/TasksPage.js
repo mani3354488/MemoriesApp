@@ -12,7 +12,7 @@ const url = '/db.json'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(4),
+    padding: theme.spacing(0.5),
     display: 'flex',
     flex: '1 1 auto',
     height: '100%'
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boardsContent: {
     display: 'flex',
-    paddingTop: '24px',
+    paddingTop: '5px',
     paddingBottom: '24px',
     height: '95%'
   },
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '100%',
     overflowX: 'hidden',
     overflowY: 'hidden',
-    marginLeft: '10px',
+    marginLeft: '30px',
     marginRight: '10px',
     flexDirection: 'column',
     [theme.breakpoints.down('sm')]: {
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center'
   },
   divider: {
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(1)
   }
 }));
 
@@ -73,7 +73,7 @@ const TasksPage = ({ tasks, getTasks }) => {
         <Grid className={classes.boardsContent}>
           {tasks && tasks.map(task => {
             return (
-              <Paper key={task.id} elevation={3} className={classes.boardCard}>
+              <Paper key={task.id} elevation={2} className={classes.boardCard}>
                 <BoardHeader title={task.title} />
                 <Divider />
                 <BoardsList boards={task.boards} />

@@ -25,7 +25,6 @@ import { ListItems }  from './listItems';
 import { getBookings } from '../../actions/bookings'
 import BookingTable from './BookingsTable'
 import Form from './BookingForm'
-import Title from './Title' 
 
 
 const drawerWidth = 240;
@@ -170,18 +169,14 @@ export default function UserDash() {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Form currentId={currentId} setCurrentId={setCurrentId}/>
-              </Paper>
+              <Form currentId={currentId} setCurrentId={setCurrentId}/>
             </Grid>
           </Grid>
         </Container>
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <BookingTable setCurrentId={setCurrentId}/>
-              </Paper>
+              <BookingTable setCurrentId={setCurrentId}/>
             </Grid>
           </Grid>
         </Container>

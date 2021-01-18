@@ -16,7 +16,11 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
       marginBottom: theme.spacing(1),
-
+    },
+    title: {
+      display: 'flex',
+      paddingTop: 10,
+      paddingLeft: 24,
     }
 }));
 
@@ -54,32 +58,35 @@ const Form = ({ currentId, setCurrentId }) => {
   return (
       <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Card>
-            <CardContent>
-                <Grid item md={12} xs={12}>
-                    <TextField name="shipperConsignee" className={classes.textField} fullWidth variant="outlined" label="shipperConsignee" value={bookingData.shipperConsignee} onChange={(e) => setBookingData({ ...bookingData, shipperConsignee: e.target.value })} />
-                </Grid>
-                <Grid item md={6} xs={12}>
-                    <TextField name="modeOfTransport" className={classes.textField} fullWidth variant="outlined" label="modeOfTransport" value={bookingData.modeOfTransport} onChange={(e) => setBookingData({ ...bookingData, modeOfTransport: e.target.value })} />
-                </Grid>
-                <Grid item md={6} xs={12}>
-                    <TextField name="commodity" className={classes.textField} fullWidth variant="outlined" label="commodity" value={bookingData.commodity} onChange={(e) => setBookingData({ ...bookingData, commodity: e.target.value })} />
-                </Grid>
-                <Grid item md={6} xs={12}>
-                    <TextField name="valueOfCommodity" className={classes.textField} fullWidth variant="outlined" label="valueOfCommodity" value={bookingData.valueOfCommodity} onChange={(e) => setBookingData({ ...bookingData, valueOfCommodity: e.target.value })} />
-                </Grid>
-                <Grid item md={6} xs={12}>
-                    <TextField name="weight" className={classes.textField} fullWidth variant="outlined" label="weight" value={bookingData.weight} onChange={(e) => setBookingData({ ...bookingData, weight: e.target.value })} />
-                </Grid>
-                <Grid item md={12} xs={12}>
-                    <TextField name="placeOfOrgin" className={classes.textField} fullWidth variant="outlined" label="placeOfOrgin" value={bookingData.placeOfOrgin} onChange={(e) => setBookingData({ ...bookingData, placeOfOrgin: e.target.value })} />
-                </Grid>
-                <Grid item md={12} xs={12}>
-                    <TextField name="destination" className={classes.textField} fullWidth variant="outlined" label="destination" value={bookingData.destination} onChange={(e) => setBookingData({ ...bookingData, destination: e.target.value })} />
-                </Grid>
-            </CardContent>
-            <Box display="flex" justifyContent="flex-end" p={2}>
-                <Button color="primary" type="submit" variant="contained">Create Booking</Button>
-            </Box>
+        <Typography className={classes.title} component="h2" variant="h6" color="primary" gutterBottom>
+        BookingForm
+        </Typography>
+          <CardContent>
+              <Grid item md={12} xs={12}>
+                  <TextField name="shipperConsignee" className={classes.textField} fullWidth variant="outlined" label="shipperConsignee" value={bookingData.shipperConsignee} onChange={(e) => setBookingData({ ...bookingData, shipperConsignee: e.target.value })} />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                  <TextField name="modeOfTransport" className={classes.textField} fullWidth variant="outlined" label="modeOfTransport" value={bookingData.modeOfTransport} onChange={(e) => setBookingData({ ...bookingData, modeOfTransport: e.target.value })} />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                  <TextField name="commodity" className={classes.textField} fullWidth variant="outlined" label="commodity" value={bookingData.commodity} onChange={(e) => setBookingData({ ...bookingData, commodity: e.target.value })} />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                  <TextField name="valueOfCommodity" className={classes.textField} fullWidth variant="outlined" label="valueOfCommodity" value={bookingData.valueOfCommodity} onChange={(e) => setBookingData({ ...bookingData, valueOfCommodity: e.target.value })} />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                  <TextField name="weight" className={classes.textField} fullWidth variant="outlined" label="weight" value={bookingData.weight} onChange={(e) => setBookingData({ ...bookingData, weight: e.target.value })} />
+              </Grid>
+              <Grid item md={12} xs={12}>
+                  <TextField name="placeOfOrgin" className={classes.textField} fullWidth variant="outlined" label="placeOfOrgin" value={bookingData.placeOfOrgin} onChange={(e) => setBookingData({ ...bookingData, placeOfOrgin: e.target.value })} />
+              </Grid>
+              <Grid item md={12} xs={12}>
+                  <TextField name="destination" className={classes.textField} fullWidth variant="outlined" label="destination" value={bookingData.destination} onChange={(e) => setBookingData({ ...bookingData, destination: e.target.value })} />
+              </Grid>
+          </CardContent>
+          <Box display="flex" justifyContent="flex-end" p={2}>
+              <Button color="primary" type="submit" variant="contained">Create Booking</Button>
+          </Box>
         </Card>
       </form>
   );
