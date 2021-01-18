@@ -6,9 +6,9 @@ const router = express.Router();
 
 export const getBookings = async (req, res) => {
     try {
-        const bookings = await Bookings.find();
-        console.log(Bookings);
-        res.status(200).json(bookings);
+        const booking = await Booking.find();
+        console.log(Booking);
+        res.status(200).json(booking);
     } catch (error) {
         res.status(404).json({ message: error.message })
     }
@@ -27,11 +27,11 @@ export const createBooking = async (req, res) => {
 
 export const updateBooking = async (req, res) => {
     const { id: _id } = req.params;
-    const post = req.body;
+    const booking = req.body;
 
     if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No Booking with that id');
 
-    const updatedBooking = await BookingMessage.findByIdAndUpdate(_id, { ...booking, _id }, { new: true });
+    const updatedBooking = await Booking.findByIdAndUpdate(_id, { ...booking, _id }, { new: true });
 
     res.json(updatedBooking);
 }
@@ -41,7 +41,7 @@ export const deleteBooking = async (req, res) => {
 
     if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No Booking with that id');
 
-    await BookingMessage.findByIdAndRemove(id);
+    await Booking.findByIdAndRemove(id);
 
     res.json({ message: 'Booking deleted successfully '});
 }
