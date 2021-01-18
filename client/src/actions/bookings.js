@@ -15,7 +15,7 @@ export const getBookings = () => async (dispatch) => {
 export const createBooking = (booking) => async (dispatch) => {
     try {
         const { data } = await api.createBooking(booking);
-        dispatch({ type: 'CREATE', payload: data })
+        dispatch({ type: 'CREATE', payload: data });
     } catch (error) {
         console.log(error.message);
     }
@@ -39,11 +39,3 @@ export const deleteBooking = (id) => async (dispatch) => {
     }
 }
 
-export const likeBooking = (id) => async (dispatch) => {
-    try {
-        const { data } = await api.likeBooking(id);
-        dispatch( { type: 'UPDATE', payload: data } )
-    } catch (error) {
-        console.log(error);
-    }
-}

@@ -6,7 +6,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
 
-export const ListItems = (
+export const mainListItems = (
   <div>
     <ListItem button>
       <ListItemIcon>

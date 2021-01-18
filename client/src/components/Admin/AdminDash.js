@@ -1,7 +1,4 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { useDispatch } from "react-redux";
+import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -20,12 +17,9 @@ import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { ListItems }  from './listItems';
+import { mainListItems } from '../../../pages/listItems';
+import TasksPage from './TasksPage';
 
-import { getBookings } from '../../actions/bookings'
-import BookingTable from './BookingsTable'
-import Form from './BookingForm'
-import Title from './Title' 
 
 
 const drawerWidth = 240;
@@ -109,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function UserDash() {
+export default function AdminDash() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -118,12 +112,6 @@ export default function UserDash() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const [currentId, setCurrentId] = useState(null);
-  const dispatch = useDispatch(); //hook
-
-  useEffect(() => {
-    dispatch(getBookings());
-  }, [currentId, dispatch]);
 //   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
@@ -141,7 +129,7 @@ export default function UserDash() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            UserDashboard
+            Admin Dashboard
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -162,29 +150,12 @@ export default function UserDash() {
           </IconButton>
         </div>
         <Divider />
-        <List>{ListItems}</List>
+        <List>{mainListItems}</List>
         <Divider />
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Form currentId={currentId} setCurrentId={setCurrentId}/>
-              </Paper>
-            </Grid>
-          </Grid>
-        </Container>
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <BookingTable setCurrentId={setCurrentId}/>
-              </Paper>
-            </Grid>
-          </Grid>
-        </Container>
+          <TasksPage />
       </main>
     </div>
   );

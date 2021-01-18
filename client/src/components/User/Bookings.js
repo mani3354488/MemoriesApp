@@ -15,7 +15,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-import { deleteBooking } from '../../../actions/bookings';
+import { deleteBooking } from '../../actions/bookings';
 
 const useRowStyles = makeStyles({
   root: {

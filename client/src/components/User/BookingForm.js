@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Card, CardContent, CardHeader, Divider, Grid, TextField, Button, Typography, Paper, makeStyles } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { createBooking, updateBooking } from '../../actions/booking';
+import { createBooking, updateBooking } from '../../actions/bookings';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -52,7 +52,7 @@ const Form = ({ currentId, setCurrentId }) => {
   
 
   return (
-      <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`}>
+      <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Card>
             <CardContent>
                 <Grid item md={12} xs={12}>
