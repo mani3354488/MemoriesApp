@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import Navbar from '../NavBar/NavBar';
 import Input from './Input';
 import Icon from './Icon';
+import { signin, signup } from '../../actions/auth';
 import { AUTH } from '../../constants/actionTypes';
 
 function Copyright() {
@@ -29,6 +30,8 @@ function Copyright() {
     </Typography>
   );
 }
+
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -53,51 +56,53 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Auth = () => {
+const SignUp = () => {
   const classes = useStyles();
+  const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const handleShowPassword = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const handleShowPassword = () => setShowPassword(!showPassword);
 
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleSubmit = () => {
-
-  };
-
-  const handleChange = () => {
-
+    if (isSignup) {
+      dispatch(signup(form, history));
+    } else {
+      dispatch(signin(form, history));
+    }
   };
 
   const switchMode = () => {
+    setForm(initialState);
     setIsSignup((prevIsSignup) => !prevIsSignup);
     setShowPassword(false);
   };
 
   const googleSuccess = async (res) => {
-    const result = res?.profileObj; //cannot get property profileObj of Undefined
+    const result = res?.profileObj;
     const token = res?.tokenId;
 
     try {
-        dispatch({ type: 'AUTH', data: {result, token} });
-        
-        history.push('/')
+      dispatch({ type: AUTH, data: { result, token } });
+
+      history.push('/');
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
   };
 
-  const googleFailure = () => {
-    console.log('Google Sign In was Unsuccessful. Try Again Later');
-  };
+  const googleError = () => alert('Google Sign In was unsuccessful. Try again later');
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   return (
     <div>
-        <Navbar />
-        <Container component="main" maxWidth="xs">
+     <Navbar />
+     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -127,7 +132,7 @@ const Auth = () => {
               </Button>
             )}
             onSuccess={googleSuccess}
-            onFailure={googleFailure}
+            onFailure={googleError}
             cookiePolicy="single_host_origin"
           />
           <Grid container justify="flex-end">
@@ -147,4 +152,4 @@ const Auth = () => {
   );
 }
 
-export default Auth;
+export default SignUp;

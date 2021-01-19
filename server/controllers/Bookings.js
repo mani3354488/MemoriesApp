@@ -7,16 +7,27 @@ const router = express.Router();
 export const getBookings = async (req, res) => {
     try {
         const booking = await Booking.find();
-        console.log(Booking);
         res.status(200).json(booking);
     } catch (error) {
         res.status(404).json({ message: error.message })
     }
 }
 
+export const getBooking = async (req, res) => { 
+    const { id } = req.params;
+
+    try {
+        const booking = await Booking.findById(id);
+        
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+
 export const createBooking = async (req, res) => {
     const booking = req.body;
-    const newBooking = new Booking(booking);
+    const newBooking = new Booking({ ...booking, creator: req.userId, createdAt: new Date().toISOString() });
     try {
         await newBooking.save()
         res.status(201).json(newBooking);
@@ -25,13 +36,17 @@ export const createBooking = async (req, res) => {
     }
 }
 
+
+
 export const updateBooking = async (req, res) => {
-    const { id: _id } = req.params;
-    const booking = req.body;
+    const { id } = req.params;
+    const { shipperConsignee, modeOfTransport, commodity, valueOfCommodity, weight, placeOfOrgin, destination } = req.body;
 
-    if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No Booking with that id');
+    if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No Booking with that id: ${id}');
 
-    const updatedBooking = await Booking.findByIdAndUpdate(_id, { ...booking, _id }, { new: true });
+    const updatedBooking = {shipperConsignee, modeOfTransport, commodity, valueOfCommodity, weight, placeOfOrgin, destination}
+    
+    await Booking.findByIdAndUpdate(_id, updatedBooking, { new: true });
 
     res.json(updatedBooking);
 }
@@ -39,7 +54,7 @@ export const updateBooking = async (req, res) => {
 export const deleteBooking = async (req, res) => {
     const { id } = req.params;
 
-    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No Booking with that id');
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No Booking with that id: ${id}');
 
     await Booking.findByIdAndRemove(id);
 
