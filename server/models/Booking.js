@@ -34,7 +34,11 @@ const BookingSchema = new Schema({
         type: String,
         default: 'Pending',
         enum: ['Pending', 'InReview', 'Accepted', 'Canceled']
-    }     
+    },
+    createdAt: {
+        type: Date,
+        default: new Date()
+    }   
 });
 
 const Booking = mongoose.model("Booking", BookingSchema);

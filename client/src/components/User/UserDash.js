@@ -25,6 +25,7 @@ import { ListItems }  from './listItems';
 import { getBookings } from '../../actions/bookings'
 import BookingTable from './BookingsTable'
 import Form from './BookingForm'
+import NavBar from "../NavBar/NavBar";
 
 
 const drawerWidth = 240;
@@ -110,13 +111,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function UserDash() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  //const [open, setOpen] = React.useState(true);
+  // const handleDrawerOpen = () => {
+  //   setOpen(true);
+  // };
+  // const handleDrawerClose = () => {
+  //   setOpen(false);
+  // };
   const [currentId, setCurrentId] = useState(null);
   const dispatch = useDispatch(); //hook
 
@@ -128,7 +129,7 @@ export default function UserDash() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
+      {/* <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
@@ -163,9 +164,9 @@ export default function UserDash() {
         <Divider />
         <List>{ListItems}</List>
         <Divider />
-      </Drawer>
+      </Drawer> */}
       <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
+        <NavBar />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
             <Grid item xs={12}>

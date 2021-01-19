@@ -2,14 +2,17 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import UserDash from "./components/User/UserDash";
-import AdminDash from "./components/Admin/AdminDash";
+import Auth from "./components/Auth/Auth";
+
 
 const App = () => {
     
     return (
         <Router>
-            <Route path="/" component={UserDash} />
-            <Route path="/admin" component={AdminDash} />
+            <Switch>
+                <Route exact path="/" component={UserDash} />
+                <Route exact path="/auth" component={Auth} />
+            </Switch>
         </Router>
     );
 }
