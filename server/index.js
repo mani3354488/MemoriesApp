@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import BookingRoutes from './routes/Bookings.js';
+import UserRoutes from './routes/User.js';
 
 const app = express();
 
@@ -11,7 +12,8 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-app.use('/api/', BookingRoutes)
+app.use('/', BookingRoutes)
+app.use('/', UserRouter)
 
 const CONNECTION_URL = "mongodb://localhost:27017/logestics";
 const PORT = process.env.PORT || 5000;
