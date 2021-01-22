@@ -1,4 +1,4 @@
-import { GET_TASKS } from '../components/redux/types'
+import { GET_TASKS } from '../constants/actionTypes'
 
 const initialState = {
   tasksList: []

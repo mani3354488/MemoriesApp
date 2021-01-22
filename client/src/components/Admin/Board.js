@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Avatar, Card, CardContent, Chip, Grid, Typography, Box } from '@material-ui/core'
 import { AvatarGroup } from '@material-ui/lab'
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
+import Popup from "../Admin/Popup";
+import Dialog from '@material-ui/core/Dialog';
 
 const useStyles = makeStyles((theme) => ({
   boardCard: {
@@ -61,6 +63,14 @@ const useStyles = makeStyles((theme) => ({
 
 export const Board = ({ board }) => {
   const classes = useStyles()
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Card
       className={clsx(classes.cardRoot, {
@@ -69,7 +79,10 @@ export const Board = ({ board }) => {
       })}
       variant="outlined"
       style={{ borderLeft: `5px solid ${board.category.color}` }}
+      onClick={handleClickOpen}
+      
     >
+      <Dialog>Heyyy</Dialog>
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography component="h5" variant="h6">

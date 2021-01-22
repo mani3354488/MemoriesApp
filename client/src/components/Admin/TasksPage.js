@@ -6,7 +6,7 @@ import { BoardHeader } from './BoardHeader';
 import { BoardFooter } from './BoardFooter';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { getTasks } from '../redux/actions/tasks';
+import { getTasks } from '../../actions/tasks';
 
 const url = '/db.json'
 

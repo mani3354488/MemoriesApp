@@ -19,7 +19,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems } from './listItems';
 import TasksPage from './TasksPage';
-import NavBar from '../AppBar/NavBar';
+import Button from '@material-ui/core/Button';
+
 
 
 
@@ -132,11 +133,7 @@ export default function AdminDash() {
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Admin Dashboard
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
+          <Button variant="contained" color="primary" href="/" >Home</Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -155,7 +152,6 @@ export default function AdminDash() {
         <Divider />
       </Drawer>
       <main className={classes.content}>
-        <NavBar />
         <div className={classes.appBarSpacer} />
           <TasksPage />
       </main>
