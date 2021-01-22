@@ -1,4 +1,4 @@
-import { GET_TASKS } from '../types'
+import { GET_TASKS } from '../constants/actionTypes'
 
 export const getTasks = value => {
   return {

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
 import bookings from './bookings'
-import auth from './auth'
+import { tasksReducer } from "./tasksReducer";
 
-export default combineReducers({ bookings, auth });
+export default combineReducers({ bookings, tasks: tasksReducer });

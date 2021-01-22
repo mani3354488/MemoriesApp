@@ -1,4 +1,4 @@
-import { GET_TASKS } from '../types'
+import { GET_TASKS } from '../components/redux/types'
 
 const initialState = {
   tasksList: []

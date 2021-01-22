@@ -19,7 +19,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems } from './listItems';
 import TasksPage from './TasksPage';
-// import NavBar from '../AppBar/NavBar';
+import NavBar from '../AppBar/NavBar';
 
 
 
@@ -113,7 +113,7 @@ export default function AdminDash() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  // const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div className={classes.root}>
@@ -155,7 +155,7 @@ export default function AdminDash() {
         <Divider />
       </Drawer>
       <main className={classes.content}>
-        {/* <NavBar /> */}
+        <NavBar />
         <div className={classes.appBarSpacer} />
           <TasksPage />
       </main>
