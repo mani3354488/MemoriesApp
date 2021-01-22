@@ -1,0 +1,337 @@
+{
+    "tasksList": [
+      {
+        "id": 1,
+        "title": "Transporting Requests",
+        "boards": [
+          {
+            "id": 1,
+            "title": "Transporting Req 1",
+            "category": {
+              "title": "Features",
+              "color": "#ff0066"
+            },
+            "start": "2020-06-10",
+            "status": "Waiting",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "Ted Erricson",
+                "avatar": "Erricson"
+              },
+              {
+                "id": 3,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "title": "Transporting Req 2",
+            "category": {
+              "title": "User Support",
+              "color": "#00ffff"
+            },
+            "start": "2020-06-16",
+            "status": "Waiting",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "Ted Erricson",
+                "avatar": "Erricson"
+              },
+              {
+                "id": 3,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              },
+              {
+                "id": 4,
+                "name": "Ted Erricson",
+                "avatar": "Erricson"
+              },
+              {
+                "id": 5,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "title": "Transporting Req 3",
+            "category": {
+              "title": "Design",
+              "color": "#b31aff"
+            },
+            "start": "2020-06-28",
+            "status": "Approved",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "title": "Transporting Req 4",
+            "category": {
+              "title": "Marketing",
+              "color": "#ffcc00"
+            },
+            "start": "2020-06-28",
+            "status": "Approved",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Bidding Requests",
+        "boards": [
+          {
+            "id": 1,
+            "title": "Bidding Req 1",
+            "category": {
+              "title": "Marketing",
+              "color": "#ffcc00"
+            },
+            "start": "2020-06-28",
+            "status": "Approved",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "title": "Bidding Req 2",
+            "category": {
+              "title": "Features",
+              "color": "#ff0066"
+            },
+            "start": "2020-06-16",
+            "status": "Waiting",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "Ted Erricson",
+                "avatar": "Erricson"
+              },
+              {
+                "id": 3,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "title": "Bidding Req 3",
+            "category": {
+              "title": "Design",
+              "color": "#b31aff"
+            },
+            "start": "2020-06-25",
+            "status": "Approved",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Accepted Requests",
+        "boards": [
+          {
+            "id": 1,
+            "title": "Accepted Req 1",
+            "category": {
+              "title": "User Support",
+              "color": "#00ffff"
+            },
+            "start": "2020-06-16",
+            "status": "Waiting",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "Ted Erricson",
+                "avatar": "Erricson"
+              },
+              {
+                "id": 3,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              },
+              {
+                "id": 4,
+                "name": "Ted Erricson",
+                "avatar": "Erricson"
+              },
+              {
+                "id": 5,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "title": "Accepted Req 2",
+            "category": {
+              "title": "Design",
+              "color": "#b31aff"
+            },
+            "start": "2020-06-28",
+            "status": "Completed",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Delivered Requests",
+        "boards": [
+          {
+            "id": 1,
+            "title": "Delivered Req 1",
+            "category": {
+              "title": "Marketing",
+              "color": "#ffcc00"
+            },
+            "start": "2020-06-28",
+            "status": "Approved",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "title": "Delivered Req 2",
+            "category": {
+              "title": "Features",
+              "color": "#ff0066"
+            },
+            "start": "2020-06-16",
+            "status": "Waiting",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "Ted Erricson",
+                "avatar": "Erricson"
+              },
+              {
+                "id": 3,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "title": "Delivered Req 3",
+            "category": {
+              "title": "Design",
+              "color": "#b31aff"
+            },
+            "start": "2020-06-25",
+            "status": "Approved",
+            "members": [
+              {
+                "id": 1,
+                "name": "Sarah Conner",
+                "avatar": "Conner"
+              },
+              {
+                "id": 2,
+                "name": "John Franklin",
+                "avatar": "Franklin"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
