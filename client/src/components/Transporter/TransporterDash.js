@@ -19,7 +19,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems } from './listItems';
 import TasksPage from './TasksPage';
-import NavBar from '../AppBar/NavBar';
+import Button from '@material-ui/core/Button';
+
+
 
 const drawerWidth = 240;
 
@@ -104,19 +106,19 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TransporterDash() {
   const classes = useStyles();
-  // const [open, setOpen] = React.useState(true);
-  // const handleDrawerOpen = () => {
-  //   setOpen(true);
-  // };
-  // const handleDrawerClose = () => {
-  //   setOpen(false);
-  // };
-//   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  const [open, setOpen] = React.useState(true);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div className={classes.root}>
       <CssBaseline />
-      {/* <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
+      <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
@@ -130,11 +132,7 @@ export default function TransporterDash() {
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Transporter Dashboard
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
+          <Button variant="contained" color="primary" href="/" >Home</Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -151,9 +149,8 @@ export default function TransporterDash() {
         <Divider />
         <List>{mainListItems}</List>
         <Divider />
-      </Drawer> */}
+      </Drawer>
       <main className={classes.content}>
-        <NavBar />
         <div className={classes.appBarSpacer} />
           <TasksPage />
       </main>
